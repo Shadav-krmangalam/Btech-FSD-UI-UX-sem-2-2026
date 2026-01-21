@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var abc = 123;
+        let def = 456;
+        const ghi = 789;
+
+
+        function a(){
+
+            if(true)
+        {
+            var x=10;
+            let b = 20;
+            const c = 30;
+
+            console.log(x,b,c);
+        }
+
+        console.log(x)
+        console.log(b)
+        console.log(c)
+        }
+
+        // console.log(x)
+// a()
+
+
+   let arr = [2,2,3,4,5];
+
+//    let arr2 = arr.map((num)=>{
+//     return num*2
+//    })
+
+// let arr2 = arr.filter((num)=>num>3)
+
+let arr2 = arr.reduce((num,acc)=>{
+return num*acc
+})
+
+
+   console.log(arr)
+   console.log(arr2)
+    </script>
+</body>
+</html>
