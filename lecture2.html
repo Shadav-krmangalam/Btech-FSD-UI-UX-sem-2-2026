@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 id="heading" class="headingClass">Hello</h1>
+    <div id="divTag"></div>
+    <div id="head2">
+        hello
+        <span style="display:none">World</span>
+    </div>
+ 
+    <script>
+        // let heading = document.getElementById("heading")
+        // let heading = document.getElementsByClassName("headingClass")
+        //  let heading = document.querySelectorAll('h1')
+        // console.log(heading)
+
+        let head = document.getElementById("heading")
+        let div = document.getElementById("divTag")
+        head.style.color = "red";
+        head.innerText = "Hello Students"
+
+        div.innerHTML = `<h1>HELLO DIV TAG</h1>
+                           <p>hello para</p>
+                           <img src="" alt="image"/>`
+
+
+        let head2 = document.getElementById("head2");
+
+        console.log(head2.textContent)
+
+        // head2.innerText = `Hello 
+        
+        
+        
+        // head2`
+
+        //    head2.textContent = `Hello 
+           
+           
+        //    head2`
+
+
+
+    </script>
+</body>
+</html>

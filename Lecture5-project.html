@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqHtYstYcP2KmriV2aHz7JTw0LXc8unLoxoA&s');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #container{
+            background-color: rgba(12, 115, 103, 0.274);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 20px;
+            width: 400px;
+            box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.244);
+        }
+        input{
+            padding: 10px;
+            font-size: 2rem;
+            border: none;
+            outline: 0.5px solid rgb(255, 0, 115);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            background-color: aliceblue;
+        }
+        #btnContainer{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        #btnContainer>*{
+            width: 80px;
+            height: 50px;
+            border: none;
+            background-color: rgba(237, 237, 141, 0.849);
+            border-radius: 10px;
+            cursor: pointer;
+            color: rgba(141, 7, 7, 0.807);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <input type="text" disabled>
+        <div id="btnContainer">
+            <button>AC</button>
+            <button>DLT</button>
+            <button>/</button>
+            <button>*</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>-</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>+</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>%</button>
+            <button>00</button>
+            <button>0</button>
+            <button>.</button>
+            <button>=</button>
+        </div>
+    </div>
+    <script>
+        let arrButtons = ['AC','DLT','/','*','7','8','9','-','4','5','6','+','1','2','3','%','00','0','.','=']
+        let inp = document.querySelector('input')
+        let btn = document.querySelector('#btnContainer')
+
+        function calc(event){
+
+            if(arrButtons.includes(event.target.innerText))
+        {
+            if(event.target.innerText === '=')
+        {
+            inp.value = eval(inp.value)
+            return
+        }
+        if(event.target.innerText === 'AC')
+        {
+            inp.value = ""
+            return
+        }
+        if(event.target.innerText === 'DLT')
+        {
+            inp.value = inp.value.slice(0,inp.value.length -1)
+            return
+        }
+
+
+
+
+            inp.value += event.target.innerText
+        }
+
+        }
+
+        btn.addEventListener('click',calc)
+
+
+
+    </script>
+    
+</body>
+</html>

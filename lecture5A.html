@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+           .box{
+            width: 200px;
+            height: 200px;
+            background-color: bisque;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>Hello</div>
+    <button id="btn1">Add Styles</button>
+    <button id="btn2">Remove Styles</button>
+    <script>
+        let div = document.querySelector('div');
+        let btn1 = document.querySelector('#btn1')
+        let btn2 = document.querySelector('#btn2')
+
+        function addStyle(){
+            div.classList.add("box")
+        }
+
+        function removeStyle(){
+            div.classList.remove('box')
+        }
+
+        btn1.addEventListener('click',addStyle)
+        btn2.addEventListener('click',removeStyle)
+
+    </script>
+</body>
+</html>
