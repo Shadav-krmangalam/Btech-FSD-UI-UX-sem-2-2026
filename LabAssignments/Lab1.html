@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Smart Event dashboard</h1>
+    <div id="main-event-add-container">
+
+        <h3>Add New Event</h3>
+        <form action="">
+            <label for="eventTitle">Event Title :</label>
+            <input type="text" name="" id="eventTitle" required>
+
+            <label for="eventDate">Event Date : </label>
+            <input type="date" name="" id="eventDate" required>
+
+            <label for="eventCategory">Category :  </label>
+            <select name="" id="eventCategory">
+                <option value="conference">Conference</option>
+                 <option value="workshop">Workshop</option>
+                  <option value="meetup">Meetup</option>
+                  <option value="webinar">Webinar</option>
+                   <option value="social">Social</option>
+            </select>
+
+            <label for="eventDescription">Description : </label>
+            <textarea name="" id="eventDescription" ></textarea>
+
+            <button type="submit">Add Event</button>
+        </form>
+
+    </div>
+
+
+    <div>
+        <h3>My Events</h3>
+        <div>
+            <button id="clear-event-btn">Clear All Events</button>
+            <button id="add-sample-btn">Add Sample Events</button>
+        </div>
+
+        <div id="all-events-container">
+            No Event Yet.
+        </div>
+
+        
+    </div>
+
+    <script>
+        let form = document.querySelector('form')
+        let eventTitle = document.querySelector('#eventTitle')
+        let eventDate = document.querySelector('#eventDate')
+        let eventCategory = document.querySelector('#eventCategory')
+        let eventDescription = document.querySelector('#eventDescription')
+        let allEventContainer = document.querySelector('#all-events-container')
+        let clearAllEvents = document.querySelector('#clear-event-btn')
+
+
+        function addEventFunction(event){
+            event.preventDefault()
+            let card = document.createElement('div')
+
+            card.innerHTML = `<button>X</button>
+                              <h4>${eventTitle.value}</h4>
+                              <span>${eventDate.value}</span> <br>
+                                <span>${eventCategory.value}</span>
+                                <p>${eventDescription.value}</p>`
+
+                            
+        
+         allEventContainer.append(card);
+
+         form.reset();
+
+        }
+
+        function clearAllEVentFunction(){
+            allEventContainer.innerHTML = '<h4>No Events Yet.</h4>'
+
+        }
+
+        form.addEventListener('submit',addEventFunction)
+
+        clearAllEvents.addEventListener('click',clearAllEVentFunction)
+
+    </script>
+</body>
+</html>
