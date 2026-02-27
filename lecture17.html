@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+    <style>
+body{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.card{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 2px solid gray;
+}
+
+img{
+    width: 150px;
+}
+    </style>
+</head>
+<body>
+    <script>
+    
+    async function fetchProducts(){
+      let response = await  fetch('https://dummyjson.com/products')
+      let data =  await response.json()
+      let elements = data.products
+      let body = document.querySelector('body')
+
+      elements.forEach((item,index)=>{
+         
+        let card = document.createElement('div')
+
+        // console.log(item)
+
+        card.innerHTML = `<img src=${item.images[0]} alt=${item.title}/>
+                           <h3>${item.title}</h3>
+                           <strong style="color:red"> $ ${item.price}</strong>
+                           <p>${item.description}</p>
+                           <span style="color:orange">Rating : ${item.rating}</span>`
+
+        card.classList.add('card')
+
+        body.append(card)
+
+      })
+  
+
+    }
+    fetchProducts()
+
+
+    </script>
+</body>
+</html>

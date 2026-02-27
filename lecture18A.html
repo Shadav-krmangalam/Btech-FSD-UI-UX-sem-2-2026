@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generators</title>
+</head>
+<body>
+
+    <script>
+
+ function* trafficLight(){
+
+    console.log("Step 1")
+
+    yield "red"
+    console.log("Step 2")
+
+
+    yield "yellow"
+    console.log("Step 3")
+
+
+    yield "green"
+
+
+ }
+
+// console.log( trafficLight())
+
+let result = trafficLight();
+
+// console.log(result.next())
+// console.log(result.next())
+// console.log(result.next())
+// console.log(result.next())
+
+// result.next();
+// setTimeout(()=>{
+//     result.next()
+
+// },5000)
+// console.log(result.next())
+
+
+console.log(result.next().value)
+
+    </script>
+    
+</body>
+</html>
